@@ -1,0 +1,269 @@
+{
+  "formatted_address": "Ronda de Valencia, 7, 28012 Madrid, Spain",
+  "formatted_phone_number": "915 39 82 67",
+  "name": "Foster's Hollywood",
+  "opening_hours": {
+    "open_now": true,
+    "periods": [
+      {
+        "close": {
+          "day": 0,
+          "time": "1700",
+          "hours": 17,
+          "minutes": 0
+        },
+        "open": {
+          "day": 0,
+          "time": "1300",
+          "hours": 13,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 1,
+          "time": "0000",
+          "hours": 0,
+          "minutes": 0
+        },
+        "open": {
+          "day": 0,
+          "time": "2000",
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 1,
+          "time": "1700",
+          "hours": 17,
+          "minutes": 0
+        },
+        "open": {
+          "day": 1,
+          "time": "1300",
+          "hours": 13,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 2,
+          "time": "0000",
+          "hours": 0,
+          "minutes": 0
+        },
+        "open": {
+          "day": 1,
+          "time": "2000",
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 2,
+          "time": "1700",
+          "hours": 17,
+          "minutes": 0
+        },
+        "open": {
+          "day": 2,
+          "time": "1300",
+          "hours": 13,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 3,
+          "time": "0000",
+          "hours": 0,
+          "minutes": 0
+        },
+        "open": {
+          "day": 2,
+          "time": "2000",
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 3,
+          "time": "1700",
+          "hours": 17,
+          "minutes": 0
+        },
+        "open": {
+          "day": 3,
+          "time": "1300",
+          "hours": 13,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 4,
+          "time": "0000",
+          "hours": 0,
+          "minutes": 0
+        },
+        "open": {
+          "day": 3,
+          "time": "2000",
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 4,
+          "time": "1700",
+          "hours": 17,
+          "minutes": 0
+        },
+        "open": {
+          "day": 4,
+          "time": "1300",
+          "hours": 13,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 5,
+          "time": "0000",
+          "hours": 0,
+          "minutes": 0
+        },
+        "open": {
+          "day": 4,
+          "time": "2000",
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 5,
+          "time": "1700",
+          "hours": 17,
+          "minutes": 0
+        },
+        "open": {
+          "day": 5,
+          "time": "1300",
+          "hours": 13,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 6,
+          "time": "0000",
+          "hours": 0,
+          "minutes": 0
+        },
+        "open": {
+          "day": 5,
+          "time": "2000",
+          "hours": 20,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 6,
+          "time": "1700",
+          "hours": 17,
+          "minutes": 0
+        },
+        "open": {
+          "day": 6,
+          "time": "1300",
+          "hours": 13,
+          "minutes": 0
+        }
+      },
+      {
+        "close": {
+          "day": 0,
+          "time": "0000",
+          "hours": 0,
+          "minutes": 0
+        },
+        "open": {
+          "day": 6,
+          "time": "2000",
+          "hours": 20,
+          "minutes": 0
+        }
+      }
+    ],
+    "weekday_text": [
+      "Monday: 1:00 – 5:00 PM, 8:00 PM – 12:00 AM",
+      "Tuesday: 1:00 – 5:00 PM, 8:00 PM – 12:00 AM",
+      "Wednesday: 1:00 – 5:00 PM, 8:00 PM – 12:00 AM",
+      "Thursday: 1:00 – 5:00 PM, 8:00 PM – 12:00 AM",
+      "Friday: 1:00 – 5:00 PM, 8:00 PM – 12:00 AM",
+      "Saturday: 1:00 – 5:00 PM, 8:00 PM – 12:00 AM",
+      "Sunday: 1:00 – 5:00 PM, 8:00 PM – 12:00 AM"
+    ]
+  },
+  "reviews": [
+    {
+      "author_name": "maruf cdp",
+      "author_url": "https://www.google.com/maps/contrib/111950544147857286771/reviews",
+      "language": "en",
+      "profile_photo_url": "https://lh3.googleusercontent.com/-sx8v66U7cJo/AAAAAAAAAAI/AAAAAAAAAxQ/Orkwa2sCKo0/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+      "rating": 5,
+      "relative_time_description": "a year ago",
+      "text": "Its very delicious food corner.... I like it",
+      "time": 1532556971
+    },
+    {
+      "author_name": "PEPINOMAN 300",
+      "author_url": "https://www.google.com/maps/contrib/112849835161897939750/reviews",
+      "language": "en",
+      "profile_photo_url": "https://lh4.googleusercontent.com/-VlB5puD3gwk/AAAAAAAAAAI/AAAAAAAAB1A/-nxToUZ1Qpc/s128-c0x00000000-cc-rp-mo-ba3/photo.jpg",
+      "rating": 4,
+      "relative_time_description": "2 months ago",
+      "text": "Apex Legends",
+      "time": 1559739964
+    },
+    {
+      "author_name": "Vladimir Livshits",
+      "author_url": "https://www.google.com/maps/contrib/106028884403503535945/reviews",
+      "language": "en",
+      "profile_photo_url": "https://lh6.googleusercontent.com/-gX1ma5EiOxw/AAAAAAAAAAI/AAAAAAAAACY/xWVrGlENjtM/s128-c0x00000000-cc-rp-mo-ba2/photo.jpg",
+      "rating": 3,
+      "relative_time_description": "2 years ago",
+      "text": "The place is ok. Friendly waiter. \nThe food was not worth its price.",
+      "time": 1485941487
+    },
+    {
+      "author_name": "Philipp Eisen",
+      "author_url": "https://www.google.com/maps/contrib/109340936699461733862/reviews",
+      "language": "en",
+      "profile_photo_url": "https://lh5.googleusercontent.com/-KZU6wKpkrS8/AAAAAAAAAAI/AAAAAAABUMo/a2t4LfRqIjc/s128-c0x00000000-cc-rp-mo-ba3/photo.jpg",
+      "rating": 3,
+      "relative_time_description": "3 years ago",
+      "text": "Didn't really like the food and for what it is it's quite expensive. ",
+      "time": 1468518094
+    },
+    {
+      "author_name": "Luis Elices",
+      "author_url": "https://www.google.com/maps/contrib/101763555954416686631/reviews",
+      "language": "es",
+      "profile_photo_url": "https://lh3.googleusercontent.com/-lsRas33eXmk/AAAAAAAAAAI/AAAAAAAAEg4/YT1aezwFDm8/s128-c0x00000000-cc-rp-mo/photo.jpg",
+      "rating": 5,
+      "relative_time_description": "a month ago",
+      "text": "Genial. Pedimos unas hamburguesas y nos las trajeron a tiempo tal y como las pedimos. También pedimos unos nachos y una ensalada y bien. Todo buenísimo y el postre lo mejor.",
+      "time": 1562134761
+    }
+  ],
+  "website": "https://fostershollywood.es/restaurantes/madrid/madrid/fh-ronda-valencia",
+  "html_attributions": []
+}
