@@ -2,7 +2,7 @@ import React from 'react'
 // import pic from '../assets/knifeAndFork.png'
 import ListItem from './ListItem'
 
-var listItems = []
+// var listItems = []
 class RightBar extends React.Component{
   // state = {
   //   listItems: []
@@ -15,23 +15,26 @@ class RightBar extends React.Component{
     return (
 
       <div className='rightWrapper'>
-        <p className='rightBarTitle'>Eats in the area:</p>
-        {this.props.places.map(place => {
-          // console.log(place)
-          return(
-            < ListItem 
-              place={place} 
-              storedDetails={this.props.storedDetails}
-              handleStoredDetails={this.props.handleStoredDetails}
-              key={place.place_id} 
-              markers={this.props.markers} 
-              handleDetailRequest={this.props.handleDetailRequest} 
-              map={this.props.map}
-              currentPlace={this.props.currentPlace}
-            />
-          )})
-        }
-        {listItems}
+        {/* <p className='rightBarTitle'>Good eats in the area:</p> */}
+        <div className="listWrapper">
+          {this.props.places.map(place => {
+            // console.log(place)
+            return(
+              < ListItem 
+                place={place} 
+                storedDetails={this.props.storedDetails}
+                handleStoredDetails={this.props.handleStoredDetails}
+                key={place.place_id} 
+                id={place.place_id} 
+                markers={this.props.markers} 
+                handleDetailRequest={this.props.handleDetailRequest} 
+                map={this.props.map}
+                currentPlace={this.props.currentPlace}
+              />
+            )})
+          }
+        </div>
+        {/* {listItems} */}
       </div>
     )
   }

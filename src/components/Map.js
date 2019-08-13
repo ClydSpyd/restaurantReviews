@@ -2,8 +2,8 @@ import React from 'react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import customStyles from './customStyles.json'
 import samples from '../samples.json'
-import markerPin from '../assets/markerPin.png'
-import markerPinHover from '../assets/markerPinHoverPRP.png'
+import markerPin from '../assets/markerPin2.png'
+import markerPinHover from '../assets/markerPinHoverPRP2.png'
 
 const style = {
   width: '100%',
@@ -35,7 +35,8 @@ export class MapComp extends React.Component {
     else {lat=this.props.places[i].geometry.location.lat}
     if(isNaN(this.props.places[i].geometry.location.lng)){lng=this.props.places[i].geometry.location.lng()}
     else {lng=this.props.places[i].geometry.location.lng}
-    this.dropPin({lat: lat, lng: lng}, i * 50, this.props.places[i].place_id, i,this.props.places[i].name, map,this.props)}
+    this.dropPin({lat: lat, lng: lng}, i * 50, this.props.places[i].place_id, this.props.places[i].id, i,this.props.places[i].name, map,this.props)}
+    this.props.handleMarkers(markers);
     // console.log(markers);
       setTimeout(function(map){
         markers.forEach(marker =>{
@@ -49,17 +50,34 @@ export class MapComp extends React.Component {
             infowindow = new google.maps.InfoWindow({content: contentString});
             // infowindow.className='infowindow';
             infowindow.open(map, marker);
-            marker.setIcon(markerPinHover)
+            marker.setIcon(markerPinHover);
+            console.log(marker)
+            console.log(document.getElementById(marker.itemID))
+            document.getElementById(marker.itemID).classList.toggle('zoom')
           });
         
           marker.addListener('mouseout', function() {
           infowindow.close(map, marker);
           marker.setIcon(markerPin)
+          document.getElementById(marker.itemID).classList.toggle('zoom')
           });
         
           marker.addListener('click', function(){
-            marker.props.handleDetailRequest(marker.id,marker.map)
-            // console.log(marker)
+            
+            console.log(document.getElementById(marker.itemID))
+            var expandedItems = (Array.from(document.querySelectorAll('.itemExpanded')))
+            expandedItems.forEach(item => {
+              item.click()
+            })
+            document.getElementById(marker.itemID).click()
+            setTimeout(function(){
+              var topPos = document.getElementById(marker.itemID).offsetTop;
+              // document.getElementById('RightBar').scrollTop = topPos;
+              document.getElementById('RightBar').scrollTo({top: topPos-9, behavior: 'smooth'})
+              // document.getElementById(marker.itemID).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+              // setTimeout(function(){document.getElementById('RightBar').scrollBy({top:-10, left:0, behavior:'smooth'})},350)
+              // document.getElementsByClassName('RightBar').scrollBy(0, -10)
+            },250)
           })
         
         })
@@ -67,12 +85,13 @@ export class MapComp extends React.Component {
       },900)
   }
   
-   dropPin = (position, timeout, id, index,name, map, props) => {
+   dropPin = (position, timeout, id, itemID, index,name, map, props) => {
     window.setTimeout(function() {
       markers.push(new google.maps.Marker({
           props:props,
           name:name,
           id:id,
+          itemID:itemID,
           index: index,
           position: position,
           map: map,
@@ -186,7 +205,7 @@ export class MapComp extends React.Component {
       places={this.props.places}
       initialCenter={{lat: this.props.pos.lat, lng:this.props.pos.lng+0.00035}} 
       google={this.props.google} 
-      zoom={20} 
+      zoom={19} 
       style={style} 
       streetViewControl = {false}
       zoomControl= {false}

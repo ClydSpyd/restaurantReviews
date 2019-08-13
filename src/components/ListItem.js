@@ -1,8 +1,8 @@
 import React from 'react'
-import pic from '../assets/knifeAndFork.png'
-import markerPin from '../assets/markerPin.png'
-import markerPinHover from '../assets/markerPinHoverPRP.png'
-import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
+import pic from '../assets/knifeAndFork2.png'
+import markerPin from '../assets/markerPin2.png'
+import markerPinHover from '../assets/markerPinHoverPRP2.png'
+// import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import halfStar from '../assets/stars/0.5TurqB.png'
 import oneStar from '../assets/stars/1TurqB.png'
 import oneAndStars from '../assets/stars/1.5TurqB.png'
@@ -15,10 +15,13 @@ import fourAndStars from '../assets/stars/4.5TurqB.png'
 import fiveStars from '../assets/stars/5TurqB.png'
 
 const google = window.google
-
+var d = new Date().getDay()-1%6;
+// var e = 0;
+// var f = e+6;
+// var g = f%7
 var  number=0;
 var stars = [halfStar,oneStar,oneAndStars,twoStars,twoAndStars,threeStars,threeAndStars,fourStars,fourAndStars,fiveStars]
-var that = this
+// var that = this
 
 class ListItem extends React.Component {
   constructor(props){
@@ -32,18 +35,27 @@ class ListItem extends React.Component {
       isExpanded: false,
       numStars:0,
       details:{},
-      fromStored: false
+      fromStored: false,
+      newToStorage: true
     }
   }
   addItem = (id, details) => {
     var array = this.props.storedDetails;
+    array.forEach(item => {
+      item.id==id ? this.setState({newToStorage:false }): this.setState({newToStorage:true})
+    })
+    var that = this
+    setTimeout(function(){
+      if (that.state.newToStorage){
     var newItem = {id:id,details:details};
-    console.log(array)
     array.push(newItem);
-    console.log(array)
+    console.log('new push')}
+    that.props.handleStoredDetails(array)
+    },100)
+    // console.log(array)
+    // console.log(array)
     // console.log('ID: ' + id)
     // console.log(details)
-    this.props.handleStoredDetails(array)
   }
 
   handleDetails = (deetz) => {
@@ -62,9 +74,13 @@ class ListItem extends React.Component {
         console.log('from stored')
       } else {return}
     })
-    if(!this.state.fromStored){
-      this.getDeetz(id,map)
-    }
+    var that = this
+    setTimeout(function(){
+      if(!that.state.fromStored){
+        that.getDeetz(id,map)
+      }
+    },300)
+    
     // IF FROM STORED IS NOT TRUE this.getDeetz()
     
   }
@@ -124,7 +140,7 @@ class ListItem extends React.Component {
     for(let i=0; i<this.props.markers.length;i++){
       if(this.props.markers[i].id===this._reactInternalFiber.key){
         var marker = this.props.markers[i];
-        var contentString = `<p style='color: blueviolet'>${marker.name}</p>`
+        // var contentString = `<p style='color: blueviolet'>${marker.name}</p>`
         marker.setIcon(markerPinHover);
         marker.setAnimation(google.maps.Animation.BOUNCE)
         const myId = this.props.place.id
@@ -179,6 +195,11 @@ class ListItem extends React.Component {
     this.setStars(this.props.place.rating)
     var numStars = number
     this.setState({numStars})
+    console.log(this.props.place.photos)
+    // if(d==6){e=0} else {e=d+1}
+    // console.log('e = '+e)
+    // console.log('g = '+g)
+    console.log('d = '+d)
     // var array = this.props.storedDetails;
     // array.push('hai')
     // console.log(array)
@@ -201,14 +222,14 @@ class ListItem extends React.Component {
     else {return (
       <div id={this.props.place.id} onMouseEnter={this.enter} onMouseLeave={this.leave} onClick={this.click} className='itemWrapper'>
           <div className="detailsInnerWrapCol">
-            <img className='itemImage'src={pic} alt="" srcSet=""/>
             <div className="itemDetails">
               <h5 className='itemName'>{this.props.place.name}</h5>
-              <p className='itemLoc'>{this.state.details.formatted_phone_number}</p>
               <p className='itemLoc'>{this.props.place.vicinity}</p>
+              <p className='itemLoc'>{this.state.details.formatted_phone_number}</p>
               {/* <p className='itemOpen'>{place.opening_hours.open_now ? 'open now!' : 'closed'}</p> */}
               {/* {this.props.place.opening_hours ? <p className='itemOpen'>{this.props.place.opening_hours.open_now?'open now!' : 'closed'}</p> : null} */}
             </div>
+            <img className='itemImageSm'src={pic} alt="" srcSet=""/>
           </div >
           <div className='hidden mid' id={this.props.place.id+'B'}>
             <p className='openHoursList'>average user rating:</p>
@@ -217,19 +238,19 @@ class ListItem extends React.Component {
             <div>
             <p className='itemUsername'><a href={this.state.details.reviews[0].author_url}>{this.state.details.reviews[0].author_name}</a> said:</p>
             <p className='reviewText'>"{this.state.details.reviews[0]<=50 ? this.state.details.reviews[0]: this.state.details.reviews[0].text.substring(0,50)+'...'}"</p>
-              <a className="itemSite">more user reviews</a>
+              <a href='#' className="itemSite">more user reviews</a>
             </div>
             : null}
                 {this.state.details.opening_hours ? 
                 <div className="openingTimes">
                   <strong>Opening Hours</strong>
-                  <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[0]}</p> 
-                  <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[1]}</p>
+                  <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[d]}</p> 
+                  {/* <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[1]}</p>
                   <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[2]}</p>
                   <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[3]}</p>
                   <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[4]}</p>
                   <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[5]}</p>
-                  <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[6]}</p> 
+                  <p className='openHoursList'>{this.state.details.opening_hours.weekday_text[6]}</p>  */}
                 </div>
                 : null}
                 <div className="siteDiv">
